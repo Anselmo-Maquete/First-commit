@@ -9,16 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
 </head>
 <body>
-    
+             <label class="switch" onclick="clicaAqui">
+               <input type="checkbox">
+               <span class="slider">  </span>
+             </label>
 <!--    aqui inicia o HEADER-->
    <header class="section">
        
        <div class="content header">
            
-           <span>COLABORAÇÃO</span>
-           <h2 class="margem-baixo margem-cima">Vamos fazer projectos <br>incríveis <span>juntos</span></h2>
+        <span>SEJA BEM VINDO(A)</span>
+
+           <h2 class="margem-baixo margem-cima" id="tituloMod">Vamos fazer projectos incríveis juntos</h2>
            
            <p class="margem-baixo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam esse <br>totam eligendi maiores, amet! Modi porro eius laborum, magnam minima?.</p>
            
@@ -31,18 +37,18 @@
    </header>
 <!--     aqui termina HEADER-->
 
-<!--aqui inicia NAV-->
+<!--aqui inicia MAIN-->
     <main class="section principal">
 <div class="artigo">
         <article>
-            <h2 class="margem-baixo">Gostava de ouvir <br>de ti.</h2>
-            <p class="margem-baixo">Lorem ipsum dolor sit amet, adipisicing elit. <br>Reiciendis sed quidem, nobis!</p>
-            <div class="redes-sociais">
-               <i class="fab fa-facebook-square">       Retroh Vader</i>
-               <i class="fab fa-twitter-square"> Retroh_Vader</i>
-               <i class="fab fa-tiktok"> R_Vader</i>
-               <i class="fab fa-instagram-square"> Retroh_V</i>
-               <i class="fab fa-pinterest-square"> Brevemente</i>
+            <h2 class="margem-baixo coresMAIN">Gostava de ouvir <br>de ti.</h2>
+            <p class="margem-baixo coresMAIN">Lorem ipsum dolor sit amet, adipisicing elit. <br>Reiciendis sed quidem, nobis!</p>
+            <div class="redes-sociais coresMAIN">
+               <i class="fab fa-facebook-square coresMAIN">       John Doe</i>
+               <i class="fab fa-twitter-square coresMAIN"> Brevemente</i>
+               <i class="fab fa-tiktok coresMAIN"> Brevemente</i>
+               <i class="fab fa-instagram-square coresMAIN"> Brevemente</i>
+               <i class="fab fa-pinterest-square coresMAIN"> Brevemente</i>
             </div>
         </article>    
 </div>
@@ -50,9 +56,9 @@
 <div class="formulario">
          <form action="">
             <label for="">Nome Completo</label>
-            <input type="text" class="margem-baixo">
+            <input type="text" class="margem-baixo" placeholder="Inserir nome">
             <label for="">Endereço Email</label>
-            <input type="email" class="margem-baixo">
+            <input type="email" class="margem-baixo" placeholder="Inserir email">
             <div class="botao-formulario margem-baixo">
                <label for="">Requisitos</label>
                    <div class="botao-box">
@@ -62,8 +68,8 @@
                         <button class="botaov2">Outros</button>       
                    </div>
             </div>
-            <label for="">Messagens</label>
-            <input type="text" class="margem-baixo">
+            <label for="">Messagem</label>
+            <input type="text" class="margem-baixo" placeholder="Quero deixar uma messagem!">
             <button type="submit" class="botao">SUBMETER</button>
         </form>
 </div>
@@ -71,9 +77,35 @@
 <!--aqui termina MAIN-->
 
 <!--aqui inicia FOOTER-->
-<footer>Copyright &copy; CodeMaquete Inc. All rights reserved</footer>
+<footer>Copyright &copy; <span>CodeMaquete</span> Inc. All rights reserved</footer>
 
-
+<script src="jquery-3.5.1.min.js">
+    
+    function maquinaEscrever(elemento){
+        
+        const textoArray = elemento.innerHTML.split('');
+        elemento.innerHTML = '';
+        
+        textoArray.forEach((letra, i) => {
+                    
+            setTimeout(function(){
+                elemento.innerHTML += letra;
+            }, 70 * i)
+                           
+                           });
+    }
+    
+    const titulo = document.getElementById("tituloMod");
+    
+    maquinaEscrever(titulo);
+    setInterval(maquinaEscrever(titulo), 5);
+    
+//    $("clicaAqui").toggleClass(".coresMAIN",function(index,currentclass),switch)
+    
+    $(".switch").click(function(){
+        $("coresMAIN").next.toggle();
+    });
+</script>
     
 </body>
 </html>
